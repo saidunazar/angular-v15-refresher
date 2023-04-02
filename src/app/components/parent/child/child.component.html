@@ -1,0 +1,11 @@
+<p>{{ childMessage }}</p>
+<button (click)="sendMessage()">Send Message</button>
+<div>
+  <p>Today's date: {{ currentDate | date | uppercase }}</p>
+</div>
+<diV
+  ><h4>{{ name | greet }}</h4></diV
+>
+<ng-content select="[content1]"></ng-content>
+<p>Split the Ng content</p>
+<ng-content select=".content2"></ng-content>

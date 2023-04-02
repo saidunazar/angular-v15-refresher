@@ -1,0 +1,12 @@
+<h4>Structural Directives</h4>
+<p *ngIf="showText">I am a sample ngIf content</p>
+<div>
+  <ul>
+    <li *ngFor="let val of nameList; let i = index">{{ i }}-{{ val.name }}</li>
+  </ul>
+</div>
+<div [ngSwitch]="nameCondition.name">
+  <p *ngSwitchCase="'Saidu'">Saidu</p>
+  <p *ngSwitchCase="'Motu'">Motu</p>
+  <p *ngSwitchDefault>No match</p>
+</div>

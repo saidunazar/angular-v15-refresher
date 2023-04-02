@@ -1,0 +1,18 @@
+<div>
+  <ul>
+    <li routerLink="child">Child One</li>
+    <li routerLink="child-two">Child Two</li>
+  </ul>
+</div>
+<div>
+  <app-child
+    [childMessage]="childMessage"
+    (messageEvent)="displayMessage($event)"
+    ><p content1>Sample Ng Content 1!!</p>
+    <p class="content2">Sample Ng Content 2!!</p></app-child
+  >
+  <input type="text" [(ngModel)]="testString" />
+  <p>{{ testString }}</p>
+  <hr />
+  <router-outlet></router-outlet>
+</div>

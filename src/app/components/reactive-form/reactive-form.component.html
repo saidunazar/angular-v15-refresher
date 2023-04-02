@@ -1,0 +1,35 @@
+<header>
+  <h4>Reactive Form</h4>
+</header>
+<section>
+  <form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+    <div formGroupName="personalDetails">
+      <div class="form-control">
+        <label for="name">Name: </label>
+        <input type="text" name="uname" formControlName="uname" />
+      </div>
+      <div class="form-control">
+        <label for="Email">Email: </label>
+        <input type="email" name="email" formControlName="email" />
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="">Password: </label>
+      <input type="password" name="password" formControlName="password" />
+    </div>
+    <div class="form-control">
+      <input type="submit" value="Submit" [disabled]="myForm.invalid" />
+      <p *ngIf="myForm.valid">Good to submit!</p>
+    </div>
+    <div formArrayName="nicknames">
+      <ng-container *ngFor="let nickname of nicknames.controls; index as i">
+        <input
+          type="text"
+          placeholder="Add nick names..."
+          formControlName="{{ i }}"
+        />
+      </ng-container>
+    </div>
+    <button (click)="addNickname()">Add</button>
+  </form>
+</section>
